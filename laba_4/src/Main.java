@@ -56,9 +56,8 @@ public class Main {
                 System.out.println("3. Определить символы входящие хотябы в одну строку");
                 System.out.println("4. Выход из приложения");
                 System.out.println("5. Начать обрабатывать следующие строки");
-                int choice = checkPos("Введите действие", "Некорректный ввод. Попробуйте снова.");
-                switch (choice) {
-                    case 1:
+                switch (scanner.nextLine()) {
+                    case "1":
                         for (char symbol : firstLine.toCharArray()) {
                             if (secondLine.contains(String.valueOf(symbol))) {
                                 analis.add(symbol);
@@ -71,7 +70,7 @@ public class Main {
                         }
                         Choice(analis);
                         break;
-                    case 2:
+                    case "2":
                         for (char symbol : firstLine.toCharArray()) {
                             if (!secondLine.contains(String.valueOf(symbol))) {
                                 analis.add(symbol);
@@ -84,7 +83,7 @@ public class Main {
                         }
                         Choice(analis);
                         break;
-                    case 3:
+                    case "3":
                         for (char symbol : firstLine.toCharArray()) {
                             analis.add(symbol);
                         }
@@ -98,11 +97,12 @@ public class Main {
                         }
                         Choice(analis);
                         break;
-                    case 4:
+                    case "4":
                         return;
                     default:
                         System.out.println("Вы ввели не корректную команду");
-                    case 5:
+                        break;
+                    case "5":
                         flag=false;
                 }
             }
@@ -161,27 +161,5 @@ public class Main {
         }
         return input;
     }
-    /**
-     * Проверяет, что введенное целое число неотрицательно.
-     *
-     * @param promptMessage Сообщение для ввода числа.
-     * @param errorMessage  Сообщение об ошибке, если введено отрицательное число.
-     * @return Неотрицательное целое число.
-     */
 
-    public static int checkPos(String promptMessage, String errorMessage) {
-        int value = -1;
-        while (value < 0) {
-            System.out.println(promptMessage);
-            try {
-                value = Integer.parseInt(scanner.nextLine());
-                if (value < 0) {
-                    System.out.println(errorMessage);
-                }else
-                    break;
-            }
-            catch (NumberFormatException e) {System.out.println("Пожалуйста, введите корректное число.");}
-        }
-        return value;
-    }
 }

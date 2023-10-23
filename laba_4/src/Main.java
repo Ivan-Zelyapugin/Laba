@@ -27,7 +27,7 @@ public class Main {
     /**
      * Путь к файлу, в который будут сохранены результаты анализа.
      */
-    public static final String puth = "lb_4/result.txt";
+    public static final String puth = "result.txt";
 
     /**
      * Метод main - точка входа в программу.
@@ -55,14 +55,17 @@ public class Main {
                 System.out.println("2. Определить символы входящие в первую и не входящие во вторую строку");
                 System.out.println("3. Определить символы входящие хотябы в одну строку");
                 System.out.println("4. Выход из приложения");
-                System.out.println("5. Начать обрабатывать следующие строки");
-                switch (scanner.nextLine()) {
+                System.out.println("5. Начать обрабатывать другие строки");
+                switch (checkEmpty("Строка не может быть пустой. Попробуйте снова.")) {
                     case "1":
                         for (char symbol : firstLine.toCharArray()) {
                             if (secondLine.contains(String.valueOf(symbol))) {
                                 analis.add(symbol);
                             }
                         }
+                        System.out.println("Первая строка: "+firstLine);
+                        System.out.println("Вторая строка: "+secondLine);
+                        System.out.print("Общие символы: ");
                         iterAnalis = analis.iterator();
                         while (iterAnalis.hasNext()) {
                             char symbol = iterAnalis.next();
@@ -76,6 +79,9 @@ public class Main {
                                 analis.add(symbol);
                             }
                         }
+                        System.out.println("Первая строка: "+firstLine);
+                        System.out.println("Вторая строка: "+secondLine);
+                        System.out.print("Символы входящие только в первую строку: ");
                         iterAnalis = analis.iterator();
                         while (iterAnalis.hasNext()) {
                             char symbol = iterAnalis.next();
@@ -90,6 +96,9 @@ public class Main {
                         for (char symbol : secondLine.toCharArray()) {
                             analis.add(symbol);
                         }
+                        System.out.println("Первая строка: "+firstLine);
+                        System.out.println("Вторая строка: "+secondLine);
+                        System.out.print("Символы входящие хотя бы в одну строку: ");
                         iterAnalis = analis.iterator();
                         while (iterAnalis.hasNext()) {
                             char symbol = iterAnalis.next();
@@ -104,9 +113,9 @@ public class Main {
                         break;
                     case "5":
                         flag=false;
+                        break;
                 }
             }
-            scanner.nextLine();
         }
     }
     /**
@@ -154,7 +163,7 @@ public class Main {
         String input = "";
         while (input.isEmpty()) {
 
-            input = scanner.nextLine().trim();
+            input = scanner.next().trim();
             if (input.isEmpty()) {
                 System.out.println(errorMessage);
             }

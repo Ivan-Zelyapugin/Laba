@@ -1,0 +1,81 @@
+.cont {
+    position: relative;
+    height: 340px;
+    width: 1000px;
+    background-color: lightgray;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cont2{
+    position: relative;
+    height: 56px;
+    width: 1000px;
+    background-color: lightgray;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.cont3{
+    position: relative;
+    height: 560px;
+    width: 1000px;
+    background-color: lightgray;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.postimg{
+    display: inline-block;
+      background-color: #333;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 5px 15px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+}
+
+.cover{
+    width: 1000px;
+    height: 242px;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+.user{
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 170px;
+    left: 15px;
+}
+
+.name {
+    position: absolute;
+    top: 270px;
+    left: 170px;
+}
+
+.lastname{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.posts{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
